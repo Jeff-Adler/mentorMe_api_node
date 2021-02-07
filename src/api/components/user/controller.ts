@@ -1,9 +1,13 @@
 import { NextFunction, Request, Response } from 'express';
 import { User } from './model';
+import { getConnection } from 'typeorm';
 
 export class UserController {
-  public readUsers() {
-    console.log('Loading users:');
+  public async readUsers(): Promise<void> {
+    const connection = getConnection();
+    console.log('Loading users from the database...');
+    const users = await connection.manager.find(User);
+    console.log('Loaded users: ', users);
   }
 
   // public async readUsers(

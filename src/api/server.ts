@@ -9,6 +9,7 @@ export class Server {
   private readonly _app: express.Application = express();
 
   public constructor() {
+    // app conforms to interface Router, which initRouters implements
     initRoutes(this._app);
   }
 

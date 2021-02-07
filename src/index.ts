@@ -27,11 +27,6 @@ import { User } from './api/components/user/model';
       console.log(`Server is running on port ${environmentVars.port}`);
     });
 
-    // TODO: Move into users controller
-    console.log('Loading users from the database...');
-    const users = await connection.manager.find(User);
-    console.log('Loaded users: ', users);
-
     server.on('close', () => {
       connection.close();
       console.log(
