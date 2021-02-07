@@ -1,7 +1,8 @@
-import * as dotenv from 'dotenv';
+// Initialize database
+// Start express server
+import { environmentVars } from './config/index';
 import express from 'express';
 
-dotenv.config();
 const app = express();
 
 app.get('/', (req, res) => {
@@ -9,6 +10,6 @@ app.get('/', (req, res) => {
 });
 
 // start the Express server
-app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}`);
+app.listen(environmentVars.port, () => {
+  console.log(`Server is running on port ${environmentVars.port}`);
 });
