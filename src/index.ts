@@ -1,6 +1,7 @@
-// Initialize database
-// Start express server
+// Initialize database & Start express server
+
 import { environmentVars } from './config/index';
+import 'reflect-metadata';
 import express from 'express';
 
 const app = express();
