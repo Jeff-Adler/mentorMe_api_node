@@ -6,3 +6,4 @@
 - Node.js
 - Express
 - TypeORM or Prisma(Query Builder)
+- Passportjs
