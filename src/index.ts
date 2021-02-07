@@ -1,7 +1,14 @@
 import * as dotenv from 'dotenv';
+import express from 'express';
+
 dotenv.config();
+const app = express();
 
-console.log(`App is running on port ${process.env.PORT}`);
-let x: number;
+app.get('/', (req, res) => {
+  res.send('Hello world!');
+});
 
-x = 5;
+// start the Express server
+app.listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT}`);
+});
