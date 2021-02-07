@@ -1,13 +1,25 @@
-import { NextFunction, Request, Response } from 'express';
+// import { NextFunction, Request, Response } from 'express';
+
+import { bind } from 'decko';
 import { User } from './model';
-import { getConnection } from 'typeorm';
+import { UserService } from './service';
 
 export class UserController {
+  private readonly userService: UserService;
+  constructor() {
+    this.userService = new UserService();
+  }
+
+  @bind
   public async readUsers(): Promise<void> {
-    const connection = getConnection();
-    console.log('Loading users from the database...');
-    const users = await connection.manager.find(User);
-    console.log('Loaded users: ', users);
+    try {
+      // const userService = new UserService();
+      // this.readUsers.bind(this);
+      const users: User[] = await this.userService.readAll();
+      console.log('Loaded users: ', users);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   // public async readUsers(
