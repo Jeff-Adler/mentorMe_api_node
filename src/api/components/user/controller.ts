@@ -13,8 +13,6 @@ export class UserController {
   @bind
   public async readUsers(): Promise<void> {
     try {
-      // const userService = new UserService();
-      // this.readUsers.bind(this);
       const users: User[] = await this.userService.readAll();
       console.log('Loaded users: ', users);
     } catch (err) {
