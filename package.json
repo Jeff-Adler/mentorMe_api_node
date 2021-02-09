@@ -18,9 +18,11 @@
     "ts-node": "3.3.0"
   },
   "dependencies": {
+    "@types/faker": "^5.1.6",
     "decko": "^1.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "faker": "^5.3.1",
     "mysql": "^2.14.1",
     "passport": "^0.4.1",
     "pg": "^8.5.1",

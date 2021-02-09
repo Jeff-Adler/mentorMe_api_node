@@ -10,11 +10,21 @@ import 'reflect-metadata';
 import { Connection, createConnection } from 'typeorm';
 import { User } from './api/components/user/model';
 
+import * as faker from 'faker';
+
 // Startup
 (async function main() {
   try {
     console.log('Initializing ORM connection...');
     const connection: Connection = await createConnection();
+
+    console.log('Inserting a new user into the database...');
+    const user = new User();
+    user.firstName = faker.name.firstName();
+    user.lastName = faker.name.lastName();
+    user.age = Math.floor(Math.random() * 90 + 18);
+    await connection.manager.save(user);
+    console.log('Saved a new user with id: ' + user.id);
 
     // Init express server
     const app: express.Application = new Server().app;
