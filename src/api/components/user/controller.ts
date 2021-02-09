@@ -20,17 +20,13 @@ export class UserController {
     }
   }
 
-  // public async readUsers(
-  //   req: Request,
-  //   res: Response,
-  //   next: NextFunction
-  // ): Promise<Response | void> {
+  @bind
+  // public async readUser(): Promise<void> {
   //   try {
-  //     const users: User[] = await this.userService.readAll({}, true);
-
-  //     return res.json({ status: res.statusCode, data: users });
+  //     const users: User[] = await this.userService.readAll();
+  //     console.log('Loaded users: ', users);
   //   } catch (err) {
-  //     return next(err);
+  //     console.log(err);
   //   }
   // }
 }
