@@ -21,9 +21,9 @@ export class UserController {
   }
 
   @bind
-  public async readUser(): Promise<void> {
+  public async readUserById(): Promise<void> {
     try {
-      const users: User[] = await this.userService.readAll();
+      const users: User[] = await this.userService.readUserById(1);
       console.log('Loaded users: ', users);
     } catch (err) {
       console.log(err);

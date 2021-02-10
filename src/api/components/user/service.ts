@@ -13,4 +13,13 @@ export class UserService {
       return err;
     }
   }
+
+  public async readUserById(id: number): Promise<User[]> {
+    try {
+      console.log('Loading users from the database...');
+      return await this.repo.find({ where: { id: id } });
+    } catch (err) {
+      return err;
+    }
+  }
 }
