@@ -1,11 +1,16 @@
-import { getConnection } from 'typeorm';
+import { Repository, getRepository } from 'typeorm';
 import { User } from './model';
 
 export class UserService {
+  readonly repo: Repository<User> = getRepository(User);
+
   //TODO: Input query parameters
-  public async readAll() {
-    const connection = getConnection();
-    console.log('Loading users from the database...');
-    return await connection.manager.find(User);
+  public async readAll(): Promise<User[]> {
+    try {
+      console.log('Loading users from the database...');
+      return await this.repo.find({});
+    } catch (err) {
+      return err;
+    }
   }
 }

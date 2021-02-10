@@ -21,12 +21,12 @@ export class UserController {
   }
 
   @bind
-  // public async readUser(): Promise<void> {
-  //   try {
-  //     const users: User[] = await this.userService.readAll();
-  //     console.log('Loaded users: ', users);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }
+  public async readUser(): Promise<void> {
+    try {
+      const users: User[] = await this.userService.readAll();
+      console.log('Loaded users: ', users);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
