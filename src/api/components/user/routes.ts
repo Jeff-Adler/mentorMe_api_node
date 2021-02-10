@@ -12,7 +12,7 @@ export class UserRoutes {
   private initRoutes(): void {
     this.router.get('/', this.controller.readUsers);
 
-    //TODO: Implement this route to find User by id. May need to query User without connection.manager
+    //TODO: Implement this route to find User by id. Need to setup middleware
     this.router.get('/1', this.controller.readUserById);
   }
 }
