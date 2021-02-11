@@ -14,5 +14,7 @@ export class UserRoutes {
 
     //TODO: Implement this route to find User by id. Need to setup middleware
     this.router.get('/1', this.controller.readUserById);
+
+    this.router.delete('/6', this.controller.deleteUserById);
   }
 }

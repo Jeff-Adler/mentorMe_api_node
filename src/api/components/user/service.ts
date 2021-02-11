@@ -22,4 +22,14 @@ export class UserService {
       return err;
     }
   }
+
+  public async deleteUserById(id: number): Promise<User[]> {
+    try {
+      console.log('Deleting user from the database...');
+      const user = await this.repo.find({ where: { id: id } });
+      return await this.repo.remove(user);
+    } catch (err) {
+      return err;
+    }
+  }
 }

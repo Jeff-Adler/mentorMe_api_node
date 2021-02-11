@@ -29,4 +29,14 @@ export class UserController {
       console.log(err);
     }
   }
+
+  @bind
+  public async deleteUserById(): Promise<void> {
+    try {
+      const users: User[] = await this.userService.deleteUserById(6);
+      console.log('Deleted users: ', users);
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
