@@ -13,6 +13,7 @@ import { Connection, createConnection } from 'typeorm';
 (async function main() {
   try {
     console.log('Initializing ORM connection...');
+    // Relies on ormconfig.json
     const connection: Connection = await createConnection();
 
     // Init express server

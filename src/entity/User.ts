@@ -1,3 +1,4 @@
+// Can be deleted
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
